@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS flutter_db;
+CREATE DATABASE flutter_db;

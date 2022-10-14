@@ -1,0 +1,47 @@
+.close {
+    position:absolute;
+    right:35px;
+    top:15px;
+    font-size: 30px;
+    font-weight: bold;
+    color: gray;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    background-color: #eee;
+    padding-top: 50px;
+}
+.modal-content {
+    background-color: white;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    width: 80%;
+}
+.float::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.cancel {
+    padding: 10px;
+    background-color: red;
+}
+.signup,.cancel {
+    float:left;
+    width:50%;
+}
+.container {
+    padding:10px;
+}

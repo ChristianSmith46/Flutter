@@ -5,13 +5,13 @@
             <input type="text" placeholder="Email" id="email-login">
         </label>
         <label>Password
-            <input type="text" placeholder="Password" id="password-login">
+            <input type="password" placeholder="Password" id="password-login">
         </label>
+        <button class="sign_in button">Sign In</button>
     </div>
-    <button class="sign_in medium button ">Sign In</button>
 </form>
 <!--This is the sign up form, where users accounts are created-->
-<p><button class="button medium" data-open="sign-up">Sign up</button></p>
+<p><button class="button signup large-auto signup-btn" data-open="sign-up">Sign up</button></p>
 
 <div id="sign-up" class="reveal modal" data-reveal>
     <form class="modal-content signup-form">
@@ -33,7 +33,7 @@
             <label for="repeat-password"><b>Repeat Password</b></label>
             <input type="password" placeholder="Enter Password Again" name="repeat-password" id="password-repeat-signup" required>
             <div class="float">
-                <button type="submit" class="signup">Sign Up</button>
+                <button type="submit" class="button signup">Sign Up</button>
             </div>
         </div>
     </form>
@@ -41,5 +41,3 @@
 
 <script src="/js/login.js"></script>
 <script src="/js/signup.js"></script>
-
-

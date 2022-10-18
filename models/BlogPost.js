@@ -12,7 +12,8 @@ BlogPost.init(
       autoIncrement: true,
     },
     title: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false
     },
     body: {
         type: DataTypes.TEXT,

@@ -62,3 +62,10 @@
 	margin-top: -4px;
 	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
 }
+.button {
+    max-width: 80px;
+    min-width: 80px;
+}
+.signup-btn {
+    margin: 50%;
+}

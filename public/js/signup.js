@@ -5,7 +5,20 @@ const signupFormHandler = async (event) => {
     const password = document.querySelector('#password-signup').value.trim();
     const passwordRepeat = document.querySelector('#password-repeat-signup').value.trim();
     const username = document.querySelector('#username-signup').value.trim();
-    
+
+    const response = await fetch(`/api/users/${username}`, {
+      method: 'GET'
+    });
+    const user = await response.json();
+    if (user.isUser){
+      alert(`This username already exists`);
+      return;
+    }
+
+    if (password.length < 6) {
+        alert(`Password must be at least 6 characters`);
+        return;
+    }
     if (password !== passwordRepeat) {
         alert(`Passwords don't match`);
         return;

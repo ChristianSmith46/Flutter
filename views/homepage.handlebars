@@ -1,6 +1,37 @@
-    <div class="container">
-    <section id="latestfeed">
-      <h4>Latest info here:</h4>
-       <p id ="info">Test example</p> 
-    </section>
+<div class="container">
+  <p><button class="button new-post" data-open="new-post">New post</button></p>
+
+  <div id="new-post" class="reveal modal" data-reveal>
+    <form class="modal-content post-form">
+      <button class="close top-bar-right" data-close aria-label="Cancel reveal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="container">
+        <p>Please fill in this form to create a new post.</p>
+        <!--This is the post title for creating a new post-->
+        <input type="text" placeholder="Title" name="title" id="title-form" required>
+        <!--This is the post body for the new post -->
+        <textarea class="post-text" type="text" placeholder="Text" name="text" id="post-text-form" cols="60" required></textarea>
+        <div class="float">
+          <button type="submit" class="button signup" data-close aria-label="Cancel reveal">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="row medium-8 large-7 columns">
+    {{#each posts }}
+    <div class="blog-post">
+        <h3>{{this.title}} <small>{{format_date this.created_at}} {{format_time this.created_at}}</small></h3>
+        <img class="thumbnail" src="https://via.placeholder.com/150">
+        <p>{{body}}</p>
+        <div class="callout">
+            <ul class="menu simple">
+                <li><a href="#">Author: {{this.user.username}}</a></li>
+            </ul>
+        </div>
     </div>
+    {{/each}}
+</div>
+
+<script src="/js/createpost.js"></script>

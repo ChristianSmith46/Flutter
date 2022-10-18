@@ -34,14 +34,31 @@
     clear: both;
     display: table;
 }
-.cancel {
-    padding: 10px;
-    background-color: red;
-}
 .signup,.cancel {
     float:left;
     width:50%;
+    border: 5px;
 }
 .container {
     padding:10px;
+}
+#latestfeed{
+    border-style: round;
+        padding-left: 25px;
+        padding-right: 0px;
+        padding-top: 10px;
+        display: inline-block;
+        background-color: rgba(32,36,41,1.00);
+        margin-top: -4px;
+        font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+        color: white;
+}
+.info{
+    padding-left: 25px;
+	padding-right: 0px;
+	padding-top: 10px;
+	display: inline-block;
+	background-color: rgba(32,36,41,1.00);
+	margin-top: -4px;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
 }

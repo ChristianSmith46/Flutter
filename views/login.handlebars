@@ -2,38 +2,44 @@
 <form class="signin-form">
     <div class="large-3 medium-6 small-6 columns end">
         <label>Email
-            <input type="text" placeholder="Email" id="">
+            <input type="text" placeholder="Email" id="email-login">
         </label>
         <label>Password
-            <input type="text" placeholder="Password">
+            <input type="text" placeholder="Password" id="password-login">
         </label>
     </div>
+    <button class="sign_in medium button ">Sign In</button>
 </form>
 <!--This is the sign up form, where users accounts are created-->
-<button onclick="document.getElementById('signup-form').syle.display='block'">Sign Up</button>
+<p><button class="button medium" data-open="sign-up">Sign up</button></p>
 
-<div id="signup-form" class="modal">
-    <span onclick="document.getElementById('signup-form').syle.display='none'" class="close" title="Close Modal"></span>
-    <form class="modal-content">
-        <div class="container" <h1>Sign up</h1>
+<div id="sign-up" class="reveal modal" data-reveal>
+    <form class="modal-content signup-form">
+        <button class="close top-bar-right" data-close aria-label="Cancel reveal" type="button">
+                <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="container"> <h4>Sign up</h4>
             <p>Please fill in this form to create an account.</p>
             <!--This is the email for the users account-->
             <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <input type="text" placeholder="Enter Email" name="email" id="email-signup" required>
+            <!--This is the username for the account -->
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" id="username-signup" required>
             <!--This is the password for the users account -->
             <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
+            <input type="password" placeholder="Enter Password" name="password" id="password-signup" required>
             <!--Asks for the users password again to verify that it was spelt properly-->
             <label for="repeat-password"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Enter Password Again" name="repeat-password" required>
+            <input type="password" placeholder="Enter Password Again" name="repeat-password" id="password-repeat-signup" required>
             <div class="float">
-                <button type="button" onclick="document.getElementById('signup-form').style.display='none'"
-                    class="cancel">Cancel</button>
                 <button type="submit" class="signup">Sign Up</button>
             </div>
         </div>
     </form>
 </div>
 
+<script src="/js/login.js"></script>
+<script src="/js/signup.js"></script>
 
-<a class="sign_in small button">Sign In</a>
+

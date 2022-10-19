@@ -1,4 +1,4 @@
-<h1>{{username}}'s Profile</h1>
+<h1>{{finalUserData.username}}'s Profile</h1>
 <p><button class="button new-post" data-open="new-post">New post</button></p>
   <div id="new-post" class="reveal modal" data-reveal>
     <form class="modal-content post-form">
@@ -18,7 +18,7 @@
     </form>
   </div>
 <div class="row medium-8 large-7 columns">
-    {{#each posts }}
+    {{#each finalUserData.blogposts }}
     <div class="blog-post">
         <h3>{{this.title}} <small>{{format_date this.created_at}} {{format_time this.created_at}}</small></h3>
         <img class="thumbnail" src="https://via.placeholder.com/150">

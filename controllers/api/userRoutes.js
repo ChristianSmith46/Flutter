@@ -1,4 +1,7 @@
 const router = require('express').Router();
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+const { json } = require('express');
 const { User } = require('../../models');
 
 
@@ -58,11 +61,11 @@ router.post('/logout', (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/exists/:username', async (req, res) => {
   try {
     const isUser = await User.findOne({
       where: {
-        username: req.params.id
+        username: req.params.username
       }
     });
     if (isUser === null){
@@ -72,6 +75,23 @@ router.get('/:id', async (req, res) => {
     }
   } catch (err) {
     res.json({isUser: false});
+  }
+});
+
+router.get('/similar/:username', async (req, res) => {
+  try {
+    const usernames = await User.findAll({
+      where: {
+        username: {
+          [Op.like]: `%${req.params.username}%`
+        }
+      },
+      attributes: ['username'],
+      limit: 4
+    });
+    res.json(usernames);
+  } catch (err) {
+    res.json(err);
   }
 });
 

@@ -1,3 +1,4 @@
+const { json } = require('express');
 const { BlogPost, User } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -31,9 +32,48 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/profile', withAuth, async (req, res) => {
-    res.render('profile', {
-        logged_in: req.session.logged_in
-    });
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: ['username'],
+            include: [{
+                model: BlogPost
+            }],
+            order: [
+                [{ model: BlogPost}, 'id', 'DESC']
+            ]
+        });
+        const finalUserData = userData.get({ plain: true });
+        res.render('profile', {
+            logged_in: req.session.logged_in,
+            finalUserData
+        });
+    } catch (err) {
+        res.json(err);
+    }
+});
+
+router.get('/user/:username', async (req, res) => {
+    try {
+        const userData = await User.findOne({
+            where: {
+                username: req.params.username
+            },
+            attributes: ['username'],
+            include: [{
+                model: BlogPost
+            }],
+            order: [
+                [{ model: BlogPost}, 'id', 'DESC']
+            ]
+        });
+        const finalUserData = userData.get({ plain: true });
+        res.render('profile', {
+            logged_in: req.session.logged_in,
+            finalUserData
+        });
+    } catch (err){
+        res.json(err);
+    }
 });
 
 module.exports = router;

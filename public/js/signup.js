@@ -6,7 +6,7 @@ const signupFormHandler = async (event) => {
     const passwordRepeat = document.querySelector('#password-repeat-signup').value.trim();
     const username = document.querySelector('#username-signup').value.trim();
 
-    const response = await fetch(`/api/users/${username}`, {
+    const response = await fetch(`/api/users/exists/${username}`, {
       method: 'GET'
     });
     const user = await response.json();

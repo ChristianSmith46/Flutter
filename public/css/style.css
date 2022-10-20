@@ -1,20 +1,21 @@
 .close {
-    position:absolute;
-    right:35px;
-    top:15px;
+    position: absolute;
+    right: 35px;
+    top: 15px;
     font-size: 30px;
     font-weight: bold;
     color: gray;
 }
+
 .close:hover,
 .close:focus {
     color: black;
     cursor: pointer;
 }
+
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
     left: 0;
     top: 0;
     width: 50%;
@@ -23,49 +24,105 @@
     background-color: #eee;
     padding-top: 50px;
 }
+
 .modal-content {
     background-color: white;
     margin: 5% auto 15% auto;
     border: 1px solid #888;
-    width: 80%;
+    width: 80%
 }
+
 .float::after {
     content: "";
     clear: both;
     display: table;
 }
-.signup,.cancel {
-    float:left;
-    width:50%;
+
+.signup,
+.cancel {
+    float: left;
+    width: 50%;
     border: 5px;
 }
+
 .container {
-    padding:10px;
+    padding: 10px;
 }
-#latestfeed{
+
+#latestfeed {
     border-style: round;
-        padding-left: 25px;
-        padding-right: 0px;
-        padding-top: 10px;
-        display: inline-block;
-        background-color: rgba(32,36,41,1.00);
-        margin-top: -4px;
-        font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
-        color: white;
-}
-.info{
     padding-left: 25px;
-	padding-right: 0px;
-	padding-top: 10px;
-	display: inline-block;
-	background-color: rgba(32,36,41,1.00);
-	margin-top: -4px;
-	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+    padding-right: 0px;
+    padding-top: 10px;
+    display: inline-block;
+    background-color: rgba(32, 36, 41, 1.00);
+    margin-top: -4px;
+    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+    color: white;
 }
+
+.info {
+    padding-left: 25px;
+    padding-right: 0px;
+    padding-top: 10px;
+    display: inline-block;
+    background-color: rgba(32, 36, 41, 1.00);
+    margin-top: -4px;
+    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+}
+
 .button {
     max-width: 80px;
     min-width: 80px;
 }
-.signup-btn {
-    margin: 50%;
+
+#result {
+    padding: 3px;
+}
+
+#result ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 2px solid black;
+    background-color: #CF5230;
+}
+
+#result ul li {
+    padding: 5px 0;
+    text-decoration: none;
+    color:white;
+}
+
+#result ul li:hover {
+    background: #6E352C;
+}
+
+.button {
+    background: #687259;
+}
+.button:hover {
+    background: #a2a182
+}
+.top-bar, .top-bar ul{
+    background: #e6cebc;
+    text-decoration: none;
+    background-color:#e6cebc ;
+}
+.nav-bar-a {
+    color: #CF5230;
+}
+.nav-bar-a:hover{
+    color:white;
+}
+.menu-text {
+    color: black;
+}
+.blog-post {
+    border: 1px solid black;
+    padding: 8px;
+    margin: 1px
+}
+.reveal-overlay {
+    display:none;
 }

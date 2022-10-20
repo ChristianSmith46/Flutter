@@ -45,6 +45,7 @@ router.get('/profile', withAuth, async (req, res) => {
         const finalUserData = userData.get({ plain: true });
         res.render('profile', {
             logged_in: req.session.logged_in,
+            isAuthor: true,
             finalUserData
         });
     } catch (err) {
@@ -58,7 +59,7 @@ router.get('/user/:username', async (req, res) => {
             where: {
                 username: req.params.username
             },
-            attributes: ['username'],
+            attributes: ['username', 'id'],
             include: [{
                 model: BlogPost
             }],
@@ -67,8 +68,10 @@ router.get('/user/:username', async (req, res) => {
             ]
         });
         const finalUserData = userData.get({ plain: true });
+        const isAuthor = finalUserData.id === req.session.user_id;
         res.render('profile', {
             logged_in: req.session.logged_in,
+            isAuthor,
             finalUserData
         });
     } catch (err){

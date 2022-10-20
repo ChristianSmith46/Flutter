@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flutter</title>
-    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
 
@@ -18,16 +18,16 @@
       <div class="top-bar-left">
         <ul class="dropdown menu" data-dropdown-menu>
           <li class="menu-text">Flutter</li>
-          <li><a href="/">Home</a></li>
-          <li><a href="/profile">Profile</a></li>
+          <li><a class="nav-bar-a" href="/">Home</a></li>
+          <li><a class="nav-bar-a" href="/profile">Profile</a></li>
         </ul>
       </div>
       {{#if logged_in}}
       <div class="top-bar-right">
         <ul class="menu search_bar">
-          <li><input type="search" placeholder="Search"></li>
-          <li><button type="button" class="button">Search</button></li>
+          <li><input type="search" placeholder="Search" id="search-bar"></li>
           <li><button type="button" class="button" id="logout-button">Logout</button></li>
+          <div id="result"></div>
         </ul>
       </div>
       {{/if}}
@@ -40,6 +40,7 @@
   {{#if logged_in}}
     <script src="/js/logout.js"></script>
   {{/if}}
+    <script src="/js/search.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script>

@@ -53,7 +53,7 @@ router.get('/profile', withAuth, async (req, res) => {
     }
 });
 
-router.get('/user/:username', async (req, res) => {
+router.get('/user/:username', withAuth, async (req, res) => {
     try {
         const userData = await User.findOne({
             where: {
@@ -67,6 +67,12 @@ router.get('/user/:username', async (req, res) => {
                 [{ model: BlogPost}, 'id', 'DESC']
             ]
         });
+        if (userData === null) {
+            res.render('404', {
+                logged_in: req.session.logged_in
+            });
+            return;
+        }
         const finalUserData = userData.get({ plain: true });
         const isAuthor = finalUserData.id === req.session.user_id;
         res.render('profile', {
@@ -77,6 +83,12 @@ router.get('/user/:username', async (req, res) => {
     } catch (err){
         res.json(err);
     }
+});
+
+router.get('/*', withAuth, () => {
+    res.render('404', {
+        logged_in: req.session.logged_in
+    });
 });
 
 module.exports = router;

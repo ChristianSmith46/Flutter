@@ -1,5 +1,5 @@
 # Flutter
-## Twitter type app that allows bootcamp and coding students to share their learning in a public setting
+## Insta/Twitter type app that allows bootcamp and coding students to share their learning in a public setting
 - Talk about and explain what they learned
 - Talk about their experiences
 - Share repositories from GitHub

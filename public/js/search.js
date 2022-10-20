@@ -5,7 +5,6 @@ const searchUser = async () => {
             const result = await fetch(`/api/users/similar/${typed}`);
             const jsonResult = await result.json();
             const usernames = jsonResult.map((username) => username.username);
-            console.log(usernames);
             showResults(usernames);
         } catch (err) {
             console.log(err);

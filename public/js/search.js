@@ -1,6 +1,6 @@
 const searchUser = async () => {
     const typed = document.querySelector('#search-bar').value.trim();
-    if (typed.length > 3){
+    if (typed.length >= 3){
         try{
             const result = await fetch(`/api/users/similar/${typed}`);
             const jsonResult = await result.json();

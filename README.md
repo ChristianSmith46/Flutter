@@ -6,3 +6,7 @@
 - Visual content -video walk throughs of projects
 - Memes and artistic expression of the emotions and thoughts involved
 ## Potential employers could observe a students journey and experience through coding
+
+![Image for the site](https://i.gyazo.com/843db949f3db5599bdfc07d1cd32a3f4.png "Flutter")
+
+Deployed app can be found here: https://safe-reaches-80052.herokuapp.com/

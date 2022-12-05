@@ -85,7 +85,7 @@ router.get('/user/:username', withAuth, async (req, res) => {
     }
 });
 
-router.get('/*', withAuth, () => {
+router.get('/*', withAuth, (req, res) => {
     res.render('404', {
         logged_in: req.session.logged_in
     });

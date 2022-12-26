@@ -9,4 +9,4 @@
 
 ![Image for the site](https://i.gyazo.com/843db949f3db5599bdfc07d1cd32a3f4.png "Flutter")
 
-Deployed app can be found here: https://safe-reaches-80052.herokuapp.com/
+Deployed app can be found here: https://flutter.herokuapp.com/
